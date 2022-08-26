@@ -15,8 +15,7 @@ nav {
 }
 
 header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
 }
 
 .header-image img {
@@ -25,8 +24,7 @@ header {
 
 .header-text {
   text-align: center;
-  padding: 0 3rem;
-  padding-top: 3rem;
+  padding: 2rem 2rem 0;
 }
 
 .header-text h1 {
@@ -36,20 +34,6 @@ header {
 
 .header-text p {
   margin-bottom: 2rem;
-}
-
-.pendulum .vertical-line {
-  border-right: 1px inset #9c9999b9;
-  height: 50px;
-  width: 50%;
-  margin: 2rem 0 0.5rem;
-}
-
-.pendulum span {
-  border: 1px solid #9d9b9bb9;
-  border-radius: 5rem;
-  color: grey;
-  padding: 8px;
 }
 
 .header-text button {
@@ -65,7 +49,6 @@ header {
 
 .button-2 {
   background-color: #8460b3;
-  margin-right: 2rem;
 }
 
 .button-1:hover,
@@ -80,6 +63,20 @@ header {
 .pendulum {
   margin-bottom: 2rem;
   text-align: center;
+}
+
+.pendulum .vertical-line {
+  border-right: 1px inset #9c9999b9;
+  height: 50px;
+  width: 50%;
+  margin: 2rem 0 0.5rem;
+}
+
+.pendulum span {
+  border: 1px solid #9d9b9bb9;
+  border-radius: 5rem;
+  color: grey;
+  padding: 8px;
 }
 
 .all-images {
@@ -143,4 +140,100 @@ footer p {
   color: #fff;
   border-style: none;
   border-radius: 5rem;
+}
+
+/* @media (min-width: 785px) {
+  .header-image .header-text {
+    background: linear-gradient(rgba(19, 18, 18, 0.8), rgba(19, 18, 18, 0.8)),
+      url(./assets/tablet/image-hero.png);
+    color: #fff;
+    padding: 1rem;
+  }
+
+  .all-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 8px;
+  }
+
+  .button {
+    display: flex;
+    padding: 1rem;
+  }
+
+  .all-images img {
+    border-radius: 1rem;
+  }
+} */
+
+@media (max-width: 576px) {
+  .header-image {
+    display: none;
+  }
+
+  header {
+    text-align: center;
+  }
+
+  .header-text button {
+    display: block;
+    margin: auto;
+    border-radius: 4px;
+  }
+
+  .button-2 {
+    margin-top: 4rem;
+  }
+
+  .all-images {
+    display: block;
+  }
+
+  article p {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+@media (min-width: 991px) {
+  header {
+    background-image: linear-gradient(
+        rgba(42, 43, 43, 0.8),
+        rgba(42, 43, 43, 0.8)
+      ),
+      url(./assets/desktop/image-hero-left.png);
+    text-align: center;
+  }
+
+  .header-image {
+    display: none;
+  }
+
+  .header-text {
+    padding-bottom: 1rem;
+    padding-left: 6rem;
+    color: #fff;
+  }
+  .all-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
+  }
+
+  article p {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  footer p {
+    display: block;
+  }
+
+  .footer-button {
+    border-radius: 0;
+    border-style: none;
+  }
 }
