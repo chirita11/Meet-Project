@@ -11,11 +11,15 @@ body {
 
 nav {
   text-align: center;
-  padding: 2rem 0;
+  padding: 16px 0;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
 }
 
 header {
   display: flex;
+  padding-top: 6rem;
 }
 
 .header-image img {
@@ -55,7 +59,7 @@ header {
 .button-2:hover {
   color: #0d0d0d;
   border: 1px double #000;
-  outline: 1px solid #000;
+  /* outline: 1px solid #000; */
   padding: 10px 1rem;
   background-color: #fff;
 }
@@ -81,18 +85,20 @@ header {
 
 .all-images {
   display: grid;
-  column-gap: 8px;
+  margin: 0 5rem;
+  column-gap: 10px;
   justify-content: space-around;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .all-images img {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 article {
   text-align: center;
+  margin-top: 4rem;
 }
 
 article h5 {
@@ -107,20 +113,14 @@ article h1 {
 }
 
 article p {
-  padding: 0 25rem;
+  padding: 0 31rem;
   color: grey;
 }
 
 footer {
-  /* background-color: #5594a3; */
   display: grid;
   grid-template-columns: 1fr 300px;
   padding: 3rem;
-  /* border: 3rem solid #5594a3; */
-  /* background-image: url(./assets/desktop/image-footer.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
   background-image: linear-gradient(
       rgba(72, 146, 166, 0.8),
       rgba(72, 146, 166, 0.8)
@@ -142,98 +142,94 @@ footer p {
   border-radius: 5rem;
 }
 
-/* @media (min-width: 785px) {
-  .header-image .header-text {
-    background: linear-gradient(rgba(19, 18, 18, 0.8), rgba(19, 18, 18, 0.8)),
-      url(./assets/tablet/image-hero.png);
-    color: #fff;
-    padding: 1rem;
-  }
-
-  .all-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 8px;
-  }
-
-  .button {
-    display: flex;
-    padding: 1rem;
-  }
-
-  .all-images img {
-    border-radius: 1rem;
-  }
-} */
-
 @media (max-width: 576px) {
   .header-image {
     display: none;
   }
 
-  header {
-    text-align: center;
-  }
-
-  .header-text button {
+  .button-1,
+  .button-2 {
     display: block;
+    border-radius: 0;
     margin: auto;
-    border-radius: 4px;
   }
 
   .button-2 {
-    margin-top: 4rem;
+    margin-top: 1rem;
   }
 
   .all-images {
     display: block;
+    margin: 0 5rem;
   }
 
+  .all-images img {
+    width: 100%;
+    border-top-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-bottom: 1rem;
+  }
   article p {
-    display: none;
+    padding: 3rem 5rem;
+    color: grey;
   }
 
   footer {
-    display: none;
+    display: block;
+    padding: 3rem 2rem;
+    background-image: linear-gradient(
+        rgba(72, 146, 166, 0.8),
+        rgba(72, 146, 166, 0.8)
+      ),
+      url(./assets/mobile/image-footer.jpg);
+  }
+  .footer-button {
+    background-color: #8460b3;
+    padding: 1rem 2rem;
+    margin-left: 8rem;
+    border-radius: none;
   }
 }
 
-@media (min-width: 991px) {
+@media (min-width: 577px) and (max-width: 991px) {
   header {
     background-image: linear-gradient(
-        rgba(42, 43, 43, 0.8),
-        rgba(42, 43, 43, 0.8)
+        rgba(52, 51, 53, 0.8),
+        rgba(52, 51, 53, 0.8)
       ),
-      url(./assets/desktop/image-hero-left.png);
-    text-align: center;
+      url(./assets/tablet/image-hero.png);
   }
-
   .header-image {
     display: none;
   }
-
   .header-text {
-    padding-bottom: 1rem;
-    padding-left: 6rem;
+    text-align: center;
+    padding: 2rem 2rem 0;
     color: #fff;
   }
+  .button-1,
+  .button-2 {
+    margin-bottom: 1rem;
+  }
+
   .all-images {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 2fr;
     row-gap: 1rem;
   }
 
   article p {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding: 3rem 5rem;
   }
 
-  footer p {
+  footer {
     display: block;
   }
 
   .footer-button {
-    border-radius: 0;
-    border-style: none;
+    margin-left: 19rem;
+    margin-top: 2rem;
   }
 }
